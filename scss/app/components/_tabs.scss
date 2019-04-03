@@ -1,0 +1,59 @@
+.tabs {
+    @extend %blank_list;
+    @extend %clear;
+    white-space: nowrap;
+    width: 100%;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+
+    @include bp('medium-up') {
+        overflow-x: hidden;
+    }
+
+    &:before {
+        width: 100%;
+        left: 0;
+        background-color: $color-light;
+    }
+
+    &.tabs-flush:before {
+        content: none;
+    }
+}
+
+.tab {
+    display: inline-block;
+    padding: $padding 0;
+    margin-right: $rhythm;
+    color: $color-mid;
+    @extend %animateThis;
+
+    &:before {
+        width: 0;
+        left: 50%;
+        background-color: $color-beta;
+        @extend %animateThis;
+    }
+
+    &._is-active {
+        color: $color-base;
+        &:before {
+            left: 0;
+            width: 100%;
+        }
+    }
+}
+
+.tabs,
+.tab {
+    position: relative;
+
+    &:before {
+        content: '';
+        height: 2px;
+        position: absolute;
+        bottom: 0;
+    }
+}

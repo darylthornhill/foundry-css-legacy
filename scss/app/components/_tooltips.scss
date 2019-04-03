@@ -1,0 +1,63 @@
+/*
+ * Tooltips:
+ *
+ *
+ */
+
+$tail-size:0.4rem;
+
+%tooltip {
+    position:relative;
+    @extend %corner-radius;
+    background-color:$color-gamma;
+    color:white;
+    padding:$padding-half $padding;
+    font-size:map-get($font-sizes,small);
+    text-transform:uppercase;
+
+    &:before {
+        position:absolute;
+        content:'';
+        border:$tail-size solid transparent;
+    }
+}
+
+.tooltip_top {
+    @extend %tooltip;
+
+    &:before {
+        left:50%; top:100%;
+        margin-left:-$tail-size;
+        border-top-color:$color-gamma;
+    }
+}
+
+.tooltip_right {
+    @extend %tooltip;
+
+    &:before {
+        right:100%; top:50%;
+        margin-top:-$tail-size;
+        border-right-color:$color-gamma;
+    }
+}
+
+.tooltip_bottom {
+    @extend %tooltip;
+
+    &:before {
+        left:50%; bottom:100%;
+        margin-left:-$tail-size;
+        border-bottom-color:$color-gamma;
+    }
+}
+
+.tooltip_left {
+    @extend %tooltip;
+
+    &:before {
+        left:100%; top:50%;
+        margin-top:-$tail-size;
+        border-left-color:$color-gamma;
+    }
+}

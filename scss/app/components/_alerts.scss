@@ -1,0 +1,70 @@
+%alert {
+    position:relative;
+    background-color:$color-white;
+    border:2px solid transparent;
+    padding:$padding*0.75 $padding*0.75 $padding*0.75 $padding*3.5;
+    @extend %corner-radius;
+    font-weight:bold;
+}
+
+    .alert-info {
+        @extend %alert;
+        border-color:$color-info;
+        color:darken($color-info,40);
+    }
+
+    .alert-error {
+        @extend %alert;
+        border-color:$color-error;
+        color:darken($color-error,40);
+    }
+
+    .alert-warning {
+        @extend %alert;
+        border-color:$color-warning;
+        color:darken($color-warning,40);
+    }
+
+    .alert-success {
+        @extend %alert;
+        border-color:$color-success;
+        color:darken($color-success,40);
+    }
+
+%alert_icon {
+    position:absolute;
+    top:0; left:0;
+    height:100%; padding:$padding*0.75;
+}
+
+    .alert-info_icon {
+        @extend %alert_icon;
+        background-color:$color-info;
+        fill:darken($color-info,40);
+    }
+
+    .alert-error_icon {
+        @extend %alert_icon;
+        background-color:$color-error;
+        fill:darken($color-error,40);
+    }
+
+    .alert-warning_icon {
+        @extend %alert_icon;
+        background-color:$color-warning;
+        fill:darken($color-warning,40);
+    }
+
+    .alert-success_icon {
+        @extend %alert_icon;
+        background-color:$color-success;
+        fill:darken($color-success,40);
+    }
+
+.alert_close {
+    position:absolute;
+    top:50%; right:$padding;
+    fill:$color-base;
+    margin-top:-8px;
+    cursor:pointer;
+}

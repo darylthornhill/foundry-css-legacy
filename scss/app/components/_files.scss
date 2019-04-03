@@ -1,0 +1,46 @@
+.file_listing {
+	position:relative;
+	@extend %corner-radius;
+	border:1px solid $color-light;
+	padding:$padding $padding $padding $padding*3;
+	@extend %truncate;
+
+	&:hover {
+		.file_listing_button { @extend %opacity-full; }
+	}
+}
+
+	.file_listing_icon {
+		position:absolute;
+		top:50%; left:$padding;
+		fill:$color-beta;
+		width:24px; height:24px;
+		margin-top:-12px;
+	}
+
+	.file_listing_name { 
+		display:block;
+		line-height:1;
+	}
+
+	.file_listing_button {
+		position:absolute;
+		top:$padding; right:$padding;
+		@extend %opacity-none;
+		@extend %animateThis;
+	}
+
+	.file_assets
+	{
+
+		.btn-alpha
+		{
+			width: 100%;
+			margin-top: $padding;
+
+			@media screen and (min-width: $breakpoint-s) {
+				margin-top: 0;
+				width: auto;
+			}
+		}
+	}

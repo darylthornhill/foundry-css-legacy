@@ -1,0 +1,40 @@
+/*
+ * Cards:
+ * A card is a container, usually used in a list or collection of objects, with a white background and rounded corners. Usually also has a hero image,
+ * which either above or beside the white section.
+ */
+
+.card {
+	@extend %corner-radius;
+    display:block;
+    box-shadow:0 5px 30px 0 rgba(00,00,00,0.125);
+}
+
+    .card_hero {
+        position:relative;
+        @extend %bg-cover;
+    }
+
+        .card_image {
+            display:block;
+        }
+
+    .card_content {
+        position:relative;
+        background-color:white;
+        padding:$padding-double;
+    }
+
+        .card_title, .card_meta { display:block }
+
+        .card_title {
+            @extend %font-alt;
+            font-size:map-get($font-sizes,'large')
+        }
+
+.card-basic {
+    @extend .card;
+    position:relative;
+	background-color:white;
+	padding:$padding-double;
+}

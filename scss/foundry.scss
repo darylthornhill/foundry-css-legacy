@@ -1,0 +1,42 @@
+/* --------------------------------
+ *
+ * FOUNDRY2
+ * Based heavily on BEM principles, along with a smattering of inuitCSS / itCSS, FOUNDRY2 is Element Studio's
+ * own CSS boilerplate for getting new user interfaces styled up quickly while keeping them looking swag, by
+ * abstracting out the styling of commonly used patterns components.
+ *
+ * This SCSS file contains extra bits for displaying all our CSS nicely in a style guide. It is compiled from
+ * a single extra SCSS file named, funnily enough, foundry.scss, which lives in the templates directory.
+ *
+ * --------------------------------
+ */
+
+/*
+ * _core/theme.scss & app/theme.scss:
+ * Go fetch our default and overriding theme settings.
+ */
+
+@import '_core/theme';
+@import 'app/theme';
+
+/*
+ * Other bits and pieces to make this stylesheet compile
+ */
+
+@import '_core/patterns/lists';
+
+@import 'app/typography';
+
+@import '_core/utilities/animation';
+@import '_core/utilities/opacity';
+
+/*
+ * Foundry-specific
+ * All our layouts and overrides for Foundry
+ */
+
+@import '_foundry/layout';
+@import '_foundry/markup';
+@import '_foundry/navigation';
+@import '_foundry/overrides';
+@import '_foundry/swatches';

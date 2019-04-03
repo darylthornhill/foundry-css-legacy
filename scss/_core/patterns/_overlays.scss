@@ -1,0 +1,67 @@
+.overlay_wrapper {
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:fixed;
+    top:0; left:0;
+    z-index:map-get($layers,modals);
+	width:100%; height:100%;
+	padding:$rhythm 0;
+}
+
+	%overlay {
+		position:absolute;
+		width:100%; height:100%;
+		top:0; left:0;
+	}
+
+	.overlay-dark {
+		@extend %overlay;
+		background-color:rgba(00,00,00,0.55);
+	}
+
+	.overlay-light {
+		@extend %overlay;
+		background-color:rgba(255,255,255,0.75);
+	}
+
+	.overlay-canvas {
+		@extend %overlay;
+		background-color:rgba($color-canvas,0.75);
+	}
+
+	.overlay-transparent {
+		@extend %overlay;
+		background-color:none;
+	}
+
+	.overlay-gamma {
+		@extend %overlay;
+		background-color:rgba(darken($color-gamma,10),0.97);
+	}
+
+		.overlay_close {
+			background-color:transparent;
+			border:none;
+			margin:0; padding:0;
+			position:absolute;
+			top:$padding; right:$padding;
+
+			&:focus {
+				outline:none;
+			}
+
+			@include bp('large-up') {
+				top:$rhythm; right:$rhythm;
+			}
+		}
+
+		
+._is-offset,%_is-offset {
+
+	@media screen and (min-width:$breakpoint-m) {
+		left:17.5rem;
+		width:calc(100% - 17.5rem); 
+	}
+	
+}

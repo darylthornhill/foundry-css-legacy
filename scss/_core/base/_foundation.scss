@@ -1,0 +1,42 @@
+/*
+ * Foundation:
+ * Element selectors that form our little reset sheet.
+ *
+ */
+
+* { box-sizing:border-box }
+
+html, body {
+	width:100%; height:100%;
+	-webkit-font-smoothing:antialiased;
+}
+
+html {
+    font-family:$font-main;
+    font-size:$base-font-size;
+    line-height:$base-line-height;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+
+    @media screen and (min-width:$breakpoint-xl) {
+        font-size:$base-font-size+1px;
+    }
+}
+
+body {
+    margin:0;
+    color:$color-base;
+    background-color:$color-canvas;
+}
+
+h1,h2,h3,h4,h5,h6 { margin:0; margin-bottom: $padding; }
+
+a {
+    background-color: transparent;
+    color:inherit;
+    text-decoration:none;
+
+    &:active, &:hover, &:focus {
+        outline: 0;
+    }
+}

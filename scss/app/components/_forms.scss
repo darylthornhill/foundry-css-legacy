@@ -1,0 +1,30 @@
+.field_set {
+    border: none;
+    margin: 0;
+    padding: 0;
+    @extend %clear;
+
+    + .field_set,
+    + .form_controls {
+        margin-top: $rhythm * 0.75;
+    }
+}
+
+.field_wrapper {
+    position: relative;
+}
+
+.form_controls {
+    text-align: right;
+}
+
+.form_control + .form_control {
+    margin-left: $padding-half;
+}
+
+.form-error-message {
+    display: block;
+    color: $color-error;
+    line-height: 1;
+    margin-top: 0.33rem;
+}

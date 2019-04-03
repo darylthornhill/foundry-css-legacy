@@ -1,0 +1,51 @@
+%modal {
+    position:relative;
+    background-color:white;
+    box-shadow:0 20px 75px rgba(00,00,00,0.25);
+	width:100%; max-width:90vw; max-height:90vh;
+	overflow:auto;
+}
+
+    .modal_header {
+        position:relative;
+        padding:$padding-double;
+
+        & ~ .modal_body { padding-top:0 }
+	}
+	
+		.modal_title { font-size:map-get($font-sizes,'medium') }
+
+    .modal_close {
+        position:absolute;
+        top:$padding-double; right:$padding-double;
+        cursor:pointer;
+    }
+
+    .modal_body {
+        position:relative;
+        padding:$padding-double;
+
+        & ~ .modal_actions {
+            padding:0 $padding-double $padding-double;
+        }
+    }
+
+    .modal_actions {
+        text-align:right;
+		padding:$padding-double 0 0;
+    }
+
+    .modal-small {
+        @extend %modal;
+        width:30rem;
+    }
+
+    .modal-large {
+        @extend %modal;
+        width:60rem;
+    }
+
+    .modal-full {
+        @extend %modal;
+        width:90vw;
+    }

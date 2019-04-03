@@ -1,0 +1,59 @@
+/*
+ * There's already a bajillion grids in the world. No need to re-invent the wheel here; we'll
+ * just grab foundations XY-grid and have done with it!
+ *
+ * We will add some preferencial, conditional tweaks to any extras we need, usually vertical rhythm.
+ *
+ */
+
+@import 'foundation';
+
+@include foundation-xy-grid-classes;
+
+$cell-rhythm:$rhythm;
+$cell-uniform-rhythm:0.91rem * 2;
+
+@if($cell-rhythm > 0) {
+
+    .grid-rhythm .cell:not(:last-child) {
+        margin-bottom:$cell-rhythm;
+	}
+	
+	/**
+	 * Add rhythm to all cells except the last, for mobile stacking
+	 */
+	 .extra-small-only-rhythm .cell:not(:last-child) {
+		margin-bottom:$cell-rhythm;
+		@include bp(small-up) {
+			&:not(.cell-rhythm) {
+				margin-bottom:0;
+			}
+		}
+	}
+	.small-only-rhythm .cell:not(:last-child) {
+		margin-bottom:$cell-rhythm;
+		@include bp(medium-up) {
+			&:not(.cell-rhythm) {
+				margin-bottom:0;
+			}
+		}
+	}
+
+}
+
+@if($cell-uniform-rhythm > 0) {
+
+    .grid-uniform-rhythm .cell:not(:last-child) {
+        margin-bottom:$cell-uniform-rhythm;
+	}
+	
+}
+
+/**
+*  HACK
+*  XY Grid is brok in firefox - need to reduce last item margin to prevent flow onto new line
+**/
+
+.grid-margin-x > .cell {
+    margin-right: 0.91rem;
+}

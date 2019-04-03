@@ -1,0 +1,54 @@
+.calendar_year {
+    @extend %blank_list;
+    @extend %clear;
+
+    li[class*=col-] {
+        min-height:18em;
+        margin-bottom:$rhythm;
+    }
+}
+
+.calendar_month {
+    width:100%;
+
+    tr { border-top:none }
+}
+
+.calendar_week {
+
+}
+
+    .calendar_week_labels {
+        text-transform:uppercase;
+        text-align:center;
+        color:$color-mid;
+    }
+
+.calendar_day {
+    text-align:center;
+    font-weight:500;
+}
+
+    .calendar_day_link {
+        display:block;
+        @extend %round-radius;
+        background-color:transparent;
+        text-decoration:none;
+        margin:0 auto;
+        padding:0.25em 0;
+        font-size:0.8em;
+        width:2em; height:2em;
+        text-align:center;
+        font-size:0.9em;
+        color:$color-base;
+
+        &.active {
+            background-color:$color-alpha;
+            color:white;
+        }
+    }
+
+.calendar_day-today {
+    background-color:$color-beta;
+    color:white;
+}

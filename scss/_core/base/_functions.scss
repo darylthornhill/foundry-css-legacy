@@ -1,0 +1,27 @@
+/** Select the first item in a range **/
+@function lower-bound($range){
+  @if length($range) <= 0 {
+    @return 0;
+  }
+  @return nth($range,1);
+}
+
+/** Select the last item in a range **/
+@function upper-bound($range) {
+  @if length($range) < 2 {
+    @return 999999999999;
+  }
+  @return nth($range, 2);
+}
+
+
+
+/** Convert REM into a PX value **/
+@function parseInt($n) {
+  @return $n / ($n * 0 + 1);
+}
+
+@function rem-to-px($size) {
+  $value: parseInt($size) * 15px; //15px is the base size specified
+  @return round($value);
+}

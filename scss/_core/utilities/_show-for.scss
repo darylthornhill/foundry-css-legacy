@@ -1,0 +1,15 @@
+
+/*
+ *  Include in the visibility classes to allow https://foundation.zurb.com/sites/docs/visibility.html
+ */
+
+@if ($showfor) {
+    .show_for_small { 
+		display:initial;
+		@include bp('medium-up') { display:none }
+	}
+	.show_for_large-block {
+		display:none;
+		@include bp('large-up') { display:block }
+	}
+}

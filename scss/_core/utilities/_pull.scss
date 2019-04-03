@@ -1,0 +1,5 @@
+.pull {
+    margin-top: -$pull-amount;
+    position: relative;
+    z-index: $pull-layer;
+}

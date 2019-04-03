@@ -1,0 +1,50 @@
+%sep {
+    border:none;
+    width:100%;
+}
+
+    .sep-thin-light {
+        @extend %sep;
+        height:1px;
+        background-color:$color-light;
+        margin:$rhythm-half 0;
+	}
+	
+	.sep-chunky-light {
+        @extend %sep;
+        height:1px;
+        background-color:$color-light;
+        margin:$rhythm 0;
+	}
+	
+	.sep-short-beta {
+        @extend %sep;
+        height:6px; width:$padding*3;
+        background-color:$color-beta;
+        margin:$rhythm-half 0;
+	}
+
+	.sep-text {
+		display:block;
+		width:100%;
+		overflow:hidden;
+		margin-bottom:$rhythm-half;
+	}
+
+		.sep-text_content {
+			position:relative;
+		}
+
+			.sep-text_rule {
+				@extend %sep;
+				position:absolute;
+				content:'';
+				width:100vw;
+				height:1px;
+				background-color:$color-light;
+				top:50%;
+				left:100%;
+				margin: 0 0 0 $padding-half;		
+			}
+
+* + .sep-text { margin-top:$rhythm }

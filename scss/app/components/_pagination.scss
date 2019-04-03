@@ -1,0 +1,23 @@
+.pagination{
+	   @extend %blank_list;
+	   @extend %font-alt;
+	   margin-top:$rhythm;
+       text-align:center;
+       display:inline-block;
+       width:100%;
+       user-select: none;
+
+       li{
+           cursor:pointer;
+           display:inline-block;
+		   padding:$padding/4 $padding;
+		   
+           &.active{
+               background:$color-alpha;
+           }
+
+           &.disabled{
+               opacity:0.6;
+           }
+       }
+   }

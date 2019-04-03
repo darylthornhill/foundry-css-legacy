@@ -1,0 +1,28 @@
+/*
+ * Media object:
+ * The media object pattern is for displaying a fixed-width piece of media like an image next to a chunk of flexible content.
+ * The classic example is Facebook's stream object - a user avatar to the left of a name and metadata.
+ */
+
+.mo {
+    position:relative
+}
+
+    .mo, .mo-body {
+        overflow:hidden;
+        _overflow:visible;
+        zoom:1;
+    }
+
+    .mo-media {
+        display:block;
+        float:left;
+        margin-bottom: 0;
+        margin-right: $rhythm-half;
+
+        img{
+            display:block;
+            width:100%;
+        }
+
+    }

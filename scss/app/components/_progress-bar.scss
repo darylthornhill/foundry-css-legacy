@@ -1,0 +1,51 @@
+/*
+ * Progress Bar:
+ * Specific styling for a progress bar
+ */
+
+.progress-bar {
+    display: flex;
+    align-items: flex-end;
+    position: relative;
+    width: 100%;
+
+    &:before,
+    &:after {
+        position: absolute;
+        text-transform: uppercase;
+        letter-spacing: 0.2rem;
+        font-size: 0.9rem;
+        top: 0;
+        font-family: $font-alt;
+    }
+
+    &:before {
+        content: 'Start';
+        left: 0;
+        color: $color-mid;
+    }
+
+    &:after {
+        content: 'Complete';
+        right: 0;
+        color: $color-beta;
+    }
+
+    &_scale {
+        border-radius: 0.6rem;
+        width: 100%;
+        height: 1.2rem;
+        position: relative;
+        background: $color-washed;
+
+        &_progress {
+            border-radius: 0.6rem;
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            background: $color-beta;
+            transition: width 0.3s ease-in-out;
+        }
+    }
+}

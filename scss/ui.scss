@@ -1,0 +1,148 @@
+/* --------------------------------
+ *
+ * FOUNDRY2
+ * The MIT License
+ * Element Studio - <howdy@builtbyelement.io>
+
+ * Based heavily on BEM principles, along with a smattering of inuitCSS / itCSS, FOUNDRY2 is Element Studio's
+ * own CSS boilerplate for getting new user interfaces styled up quickly while keeping them looking swag, by
+ * abstracting out the styling of commonly used patterns components.
+ *
+ * Foundry is broken into two big chunks;
+ *
+ * 1. _core contains project defaults and utilities, baseline styles, and common layout patterns that shouldn't
+ * ever really need to change. We keep this seperate so that we can easily pull and push core updates and
+ * improvements to Foundry whenever nessecary.
+ *
+ * a. _theme.scss
+ * b. _base.scss
+ * c. Patterns
+ * d. Utilities
+ *
+ * 2. app contains stuff specific to a project - our theme file overrides, component styles, and templates
+ * styles.
+ *
+ * a. _config.scss
+ * b. _theme.scss
+ * c. _typography.scss
+ * d. Components
+ * e. Templates
+ * f. Vendor
+ *
+ * --------------------------------
+ */
+
+/*
+ * _core/theme.scss:
+ * Default variables for colour, spacing, font declarations, asset paths - our general project aesthetic.
+ */
+
+@import '_core/theme';
+
+/*
+* app/theme.scss
+* For overriding anything set in the _core/theme file.
+*/
+
+@import 'app/theme';
+
+/*
+* _core/base:
+* Far-reaching declarations which affect more or less everything, reset-style declarations for un-classed elements, typesetting styles.
+*/
+
+@import '_core/base/normalize';
+@import '_core/base/foundation';
+@import '_core/base/functions';
+@import '_core/base/mediaqueries';
+
+/*
+* _core/utilities:
+* Small classes and helpers such as clearfixes and common opacity declarations, to help cut down on the amount of identical property declarations.
+*/
+
+@import '_core/utilities/animation';
+@import '_core/utilities/clearfix';
+@import '_core/utilities/empty';
+@import '_core/utilities/loading';
+@import '_core/utilities/opacity';
+@import '_core/utilities/overflow';
+@import '_core/utilities/show-for';
+@import '_core/utilities/visibility';
+@import '_core/utilities/pull';
+@import '_core/utilities/alignment';
+
+/*
+* _core/patterns:
+* Structural patterns for commonly used layouts or element arrangements which are usually used or relied upon by multiple components.
+*/
+
+@import '_core/patterns/containers';
+@import '_core/patterns/backgrounds';
+@import '_core/patterns/grids';
+@import '_core/patterns/images';
+@import '_core/patterns/lists';
+@import '_core/patterns/islands';
+@import '_core/patterns/seperators';
+@import '_core/patterns/media-object';
+@import '_core/patterns/overlays';
+@import '_core/patterns/wrappers';
+
+/*
+* app/typography.scss
+* Pull in our typography class stylesheet.
+*/
+
+@import 'app/typography';
+
+/*
+* app/components:
+* Fully styled, re-usable chunks of UI.
+*/
+
+@import 'app/components/navigation/navigation';
+
+@import 'app/components/inputs/base-inputs';
+@import 'app/components/inputs/checkbox-inputs';
+@import 'app/components/inputs/dropzone-inputs';
+@import 'app/components/inputs/multiselect-inputs';
+@import 'app/components/inputs/password-inputs';
+@import 'app/components/inputs/radio-inputs';
+@import 'app/components/inputs/select-inputs';
+@import 'app/components/inputs/text-areas';
+@import 'app/components/inputs/text-inputs';
+
+@import 'app/components/alerts';
+@import 'app/components/buttons';
+@import 'app/components/calendar';
+@import 'app/components/cards';
+@import 'app/components/files';
+@import 'app/components/forms';
+@import 'app/components/icons';
+@import 'app/components/layout';
+@import 'app/components/logo';
+@import 'app/components/modals';
+@import 'app/components/pagination';
+@import 'app/components/progress-bar';
+@import 'app/components/questionnaire';
+@import 'app/components/search';
+@import 'app/components/seperators';
+@import 'app/components/tables';
+@import 'app/components/tabs';
+@import 'app/components/tags';
+@import 'app/components/toast';
+@import 'app/components/tooltips';
+
+/*
+* app/vendor:
+* Third party css from installed vendor packages
+*/
+
+// @import 'app/vendor/';
+
+/*
+* app/templates:
+* Things that only occur in a single place. Try to keep this as small as possible.
+*/
+
+@import 'app/templates/dashboard';

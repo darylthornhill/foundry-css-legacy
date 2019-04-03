@@ -1,0 +1,49 @@
+%input {
+    display:block;
+    width:100%;
+    font-size:map-get($font-sizes,'small');
+    -webkit-appearance:none;
+    background-color:$color-white;
+	border:1px solid $color-light;
+    @extend %corner-radius;
+    padding:$padding*0.75;
+	box-shadow:0 0 0 5px transparent;
+	resize:none;
+
+    @extend %animateThis;
+
+	&:focus {
+		outline:none;
+        box-shadow:0 0 0 1px rgba($color-beta,0.5);
+        + .text_input_label { color:$color-alpha }
+	}
+
+}
+
+%input_label {
+	display:inline-block;
+	margin-bottom:$padding-half;
+	color:$color-dark;
+	@extend %font-alt;
+	text-transform:uppercase;
+    font-size:map-get($font-sizes,'small');
+}
+
+%input_meta {
+    position:absolute;
+    right:0; top:0;
+    color:$color-mid;
+    @extend %font-alt;
+    font-size:map-get($font-sizes,'small');
+    pointer-events:none;
+    @extend %animateThis;
+}
+
+%input_icon {
+    //
+}
+
+.input-flat {
+	background-color:$color-light;
+	border-color:$color-light;
+}

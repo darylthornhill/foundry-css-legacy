@@ -1,0 +1,49 @@
+/*
+ * Containers:
+ * Common content container classes, using our page width settings, and a margin auto for centering the content.
+ */
+
+%container {
+    position:relative;
+	display:block;
+	width:100%;
+    margin-left:auto;
+    margin-right:auto;
+    padding-left:$rhythm-half;
+	padding-right:$rhythm-half;
+	
+	@include bp('medium-up') {
+		padding-left:$rhythm;
+		padding-right:$rhythm;
+	}
+}
+
+.container-full {
+	@extend %container;
+ }
+
+.container-flush {
+    @extend %container;
+    padding-left:0;
+    padding-right:0;
+}
+
+.container-wide {
+    @extend %container;
+    max-width:$page-container-wide;
+}
+.container-medium {
+    @extend %container;
+    max-width:$page-container-medium;
+}
+.container-narrow {
+    @extend %container;
+    max-width:$page-container-narrow;
+}
+
+.container-mini {
+    @extend %container;
+    max-width:$page-container-mini;
+}
+
+

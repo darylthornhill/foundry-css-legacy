@@ -1,0 +1,31 @@
+.foundry-swatches {
+
+    td { text-align:center; }
+
+}
+
+.foundry-swatch {
+    display:inline-block;
+    width:3em; height:3em;
+    @extend %round-radius;
+
+    &.base { background-color:$color-base }
+
+    &.alpha { background-color:$color-alpha }
+    &.beta { background-color:$color-beta }
+    &.gamma { background-color:$color-gamma }
+
+    &.dark { background-color:$color-dark }
+    &.mid { background-color:$color-mid }
+    &.light { background-color:$color-light }
+
+    &.success { background-color:$color-success }
+    &.warning { background-color:$color-warning }
+    &.pending { background-color:$color-pending }
+    &.error { background-color:$color-error }
+    &.info { background-color:$color-info }
+
+    &.facebook { background-color:$color-facebook }
+    &.twitter { background-color:$color-twitter }
+    &.linkedin { background-color:$color-linkedin }
+}

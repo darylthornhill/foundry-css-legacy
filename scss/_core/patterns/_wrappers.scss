@@ -1,0 +1,18 @@
+/*
+ * Wrappers:
+ * Helper classes usually used to add padding to a .container element.
+ */
+
+%wrapper {
+    //
+}
+
+    .wrapper-slim {
+        padding-top:$rhythm;
+        padding-bottom:$rhythm;
+    }
+
+    .wrapper-chunky {
+        padding-top:$rhythm-double;
+        padding-bottom:$rhythm-double;
+    }

@@ -1,0 +1,28 @@
+/*
+ * Foundry \ Overrides
+ *
+ * Styles for overriding components styles i.e. for displaying things inline which would normally be position fixed or absolute.
+ */
+
+.modal.foundry-modal {
+    position:static;
+}
+
+.confirmation.foundry-confirmation {
+    max-width:45rem;
+}
+
+div[class*=toast].foundry-toast {
+    margin:0;
+}
+
+    .cell.box {
+        background-color:$color-beta;
+        padding:$padding-double;
+        text-align:center;
+        color:white;
+    }
+
+div[class*=alert-] + div[class*=alert-] {
+    margin-top:$rhythm-half
+}

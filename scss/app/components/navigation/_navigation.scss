@@ -1,0 +1,113 @@
+.nav_logo {
+	display:block;
+	max-width:6.5rem;
+	margin:0 auto;
+}
+
+
+.nav-top {
+    position: fixed;
+	top: 0; left: 0;
+	padding:$padding;
+    z-index: map-get($layers,'navigation');
+    width: 100%;
+    background-color: $color-white;
+	border-bottom: 1px solid #EFEFEF;
+	@extend %clear;
+	
+	@media screen and (min-width:$breakpoint-m) {
+		display:none;
+	}
+
+}
+
+	.nav-top_logo {
+		float:left;
+	}
+
+    .nav-top_trigger {
+		float:right;
+		margin-top:1rem;
+		
+		svg { margin-left:0.75rem }
+
+		span, svg { 
+			vertical-align:middle;
+			line-height:1;
+		}
+	}
+
+.nav-main {
+    position: fixed;
+    top: 0; left: -17.5rem;
+    z-index: map-get($layers,navigation);
+    width: 17.5rem;
+    height: 100%;
+    background-color: $color-gamma;
+    overflow-x: hidden;
+	overflow-y: auto;
+	@extend %animateThis;
+
+	& ~ main { margin:6.5rem 0 0; }
+	
+	@media screen and (min-width:$breakpoint-m) {
+		left:0;
+		& ~ main {
+			margin:0 0 0 17.5rem;
+		}
+	}
+
+	&._is-open {
+		left:0;
+
+		& + .nav_overlay { 
+			width:100%;
+			@extend %opacity-half;
+		}
+	}
+
+}
+
+    .nav-main_logo {
+		display:block;
+        padding:$padding-double 0 $padding;
+    }
+
+    .nav-main-links {
+        padding:$padding 0;
+        @extend %blank_list;
+
+        + .nav-main-links { border-top:1px solid darken($color-gamma,10) }
+	}
+
+		.nav-main-link {
+			display:block;
+			padding:$padding $padding-double;
+			color:lighten($color-base,10);
+			@extend %animateThis;
+
+			&:hover { background-color:darken($color-gamma,2); }
+
+			&._is-active {
+				color:$color-base;
+				background-color:darken($color-gamma,10);
+				border-right:4px solid darken($color-alpha,10);
+			}
+		}
+	
+.nav_overlay {
+	position:fixed;
+	top:0; left:0;
+	height:100%; width:0;
+	@extend %opacity-none;
+	transition:0.4s opacity linear;
+	background-color:$color-dark;
+	z-index:map-get($layers,'navigation')-1;
+
+	@media screen and (min-width:$breakpoint-m) {
+		width:0; height:0;
+		display:none;
+		pointer-events:none;
+	}
+
+}

@@ -1,0 +1,229 @@
+/*
+ * Buttons:
+ * A button (.btn) is an inline-block element used to highlight actions in a UI. By default, a .btn will have a background-color
+ * equal to the document $color-base, which will probably be dark, with white text.
+ *
+ */
+
+/*
+ * Mixins and core styles
+ */
+
+@mixin button($color, $background, $border: $background) {
+    color: $color;
+    fill: $color;
+    cursor: pointer;
+    background-color: $background;
+    border: 2px solid $border;
+    text-align: center;
+
+    &:hover {
+        background-color: darken($background, 10);
+        border-color: darken($border, 10);
+    }
+
+    &:focus {
+        outline: none;
+    }
+}
+
+/*
+ * Standard buttons
+ */
+
+%button {
+    display: inline-block;
+    padding: $padding * 0.75;
+    text-decoration: none;
+    @extend .type-label;
+    white-space: nowrap;
+
+    * {
+        vertical-align: middle;
+    }
+
+    svg {
+        margin-left: 1rem;
+    }
+
+    &:focus {
+        outline: none;
+    }
+
+    @extend %animateThis;
+
+    @media screen and (min-width: $breakpoint-s) {
+        padding: $padding * 0.75 $padding * 1.25;
+    }
+}
+
+.btn {
+    @extend %button;
+    @include button(white, $color-base);
+}
+
+.btn-alpha {
+    @extend %button;
+    @include button($color-base, $color-alpha);
+}
+
+.btn-beta {
+    @extend %button;
+    @include button(white, $color-beta);
+}
+
+.btn-white-alpha {
+    @extend %button;
+    @include button($color-alpha, white);
+}
+
+.btn-white-beta {
+    @extend %button;
+    @include button($color-beta, white);
+}
+
+.btn-info {
+    @extend %button;
+    @include button(white, $color-info, $color-info);
+}
+
+.btn-success {
+    @extend %button;
+    @include button(white, $color-success, $color-success);
+}
+
+.btn-warning {
+    @extend %button;
+    @include button(white, $color-warning, $color-warning);
+}
+
+.btn-error {
+    @extend %button;
+    @include button(white, $color-error, $color-error);
+}
+
+.btn-dormant {
+    @extend %button;
+    @include button(white, $color-dark, $color-dark);
+}
+
+.btn-disabled {
+    @extend %button;
+    @include button($color-dark, $color-light, $color-light);
+    pointer-events: none;
+}
+
+/*
+ * Bordered buttons
+ */
+
+.border_btn {
+    @extend %button;
+    @include button($color-base, transparent, $color-base);
+}
+
+.border_btn-alpha {
+    @extend %button;
+    @include button($color-alpha, transparent, $color-alpha);
+}
+
+.border_btn-beta {
+    @extend %button;
+    @include button($color-beta, transparent, $color-beta);
+}
+
+.border_btn-info {
+    @extend %button;
+    @include button($color-info, transparent, $color-info);
+}
+
+.border_btn-success {
+    @extend %button;
+    @include button($color-success, transparent, $color-success);
+}
+
+.border_btn-warning {
+    @extend %button;
+    @include button($color-warning, transparent, $color-warning);
+}
+
+.border_btn-error {
+    @extend %button;
+    @include button($color-error, transparent, $color-error);
+}
+
+.border_btn-dormant {
+    @extend %button;
+    @include button($color-dark, transparent, $color-dark);
+}
+
+/*
+ * Ghost buttons
+ */
+
+.ghost_btn-alpha {
+    @extend %button;
+    @include button($color-alpha, transparent, transparent);
+
+    &:hover {
+        background-color: darken($color-white, 10);
+        border-color: darken($color-white, 10);
+    }
+
+    &:focus {
+        border-color: darken($color-white, 15);
+        background-color: darken($color-white, 15);
+    }
+}
+
+.ghost_btn-beta {
+    @extend %button;
+    @include button($color-beta, transparent, transparent);
+
+    &:hover {
+        background-color: darken($color-white, 10);
+        border-color: darken($color-white, 10);
+    }
+
+    &:focus {
+        border-color: darken($color-white, 15);
+        background-color: darken($color-white, 15);
+    }
+}
+
+/*
+ * Modifiers
+ */
+
+.btn-small {
+    padding: $padding-half/2 $padding/1.5;
+}
+
+.btn-large {
+    padding: $padding $padding * 1.5;
+}
+
+.btn-block {
+    display: block;
+    width: 100%;
+}
+
+.btn-adjacent + .btn-adjacent {
+    margin-left: $padding-half;
+}
+
+.btn-stacked + .btn-stacked {
+    margin-top: $padding-half;
+}
+
+/**
+ * States
+ */
+._is-working {
+    pointer-events: none;
+}
+
+._is-disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}

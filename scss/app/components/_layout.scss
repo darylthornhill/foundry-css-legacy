@@ -1,0 +1,49 @@
+.app-header, .app-main { 
+	padding:$padding;
+	
+	@media screen and (min-width:$breakpoint-m) {
+		padding:$padding-double;
+	}
+}
+
+.app-header{
+	background-color:$color-white;
+	
+	&._has-tabs {
+		padding-bottom:0;
+	}
+
+	.tabs { margin-top:$rhythm }
+
+}
+
+.app-main {
+	
+}
+
+.app-actions {
+	text-align:right;
+
+	a {
+		width:49%;
+
+		& + a { margin-left:2% }
+
+		&:only-of-type {
+			width:100%;
+			margin:0;
+
+			@media screen and (min-width:$breakpoint-s) {
+				width:auto;
+			}
+		}
+
+		@media screen and (min-width:$breakpoint-s) {
+			width:auto;
+
+			& + a { margin-left:$padding-half }
+		}
+
+	}
+	
+}

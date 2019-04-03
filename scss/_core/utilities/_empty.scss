@@ -1,0 +1,26 @@
+._is-empty_message {
+	color:$color-mid;
+	display:block;
+}
+
+._is-empty {
+    display:flex;
+    width:100%;
+    min-height:40vh;
+    align-items:center;
+    justify-content: center;
+    padding:$rhythm;
+    flex-direction:column;
+    text-align:center;
+}
+
+._is-empty-dotted{
+    border:2px dashed $color-light;
+    height:25rem;
+    margin-bottom:$rhythm;
+}
+
+._is-empty-title{
+    display:block;
+    font-size:1.6rem;
+}

@@ -1,0 +1,293 @@
+/*
+ * Typography aesthetics
+ */
+
+%font-main {
+    font-family: $font-main;
+}
+%font-alt {
+    font-family: $font-alt;
+}
+
+/*
+ * Typographic classes
+ */
+
+.type-title {
+    font-size: map-get($font-sizes, larger);
+    font-weight: normal;
+    line-height: 1;
+    margin-bottom: 0;
+    letter-spacing: -0.01em;
+
+    @media screen and (min-width: $breakpoint-m) {
+        font-size: map-get($font-sizes, largest);
+    }
+}
+
+.type-subtitle,
+.type-subtitle-decorated {
+    font-size: map-get($font-sizes, 'large');
+    font-weight: normal;
+    line-height: 1;
+    margin-bottom: $rhythm-half;
+
+    @media screen and (min-width: $breakpoint-m) {
+        font-size: map-get($font-sizes, 'large') * 1.5;
+    }
+}
+
+.type-subtitle-decorated {
+    display: inline-block;
+    position: relative;
+
+    span {
+        position: relative;
+    }
+
+    &:before {
+        content: '';
+        width: 100%;
+        height: 6px;
+        background-color: $color-gamma;
+        position: absolute;
+        bottom: 0.06em;
+        left: 0;
+    }
+
+    & .type-decorator {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        margin: 0;
+        color: $color-beta;
+        transform: translate(200%, -50%) rotateZ(90deg);
+    }
+}
+
+.type-heading {
+    @extend %font-main;
+    font-weight: 400;
+    font-size: map-get($font-sizes, 'large');
+    line-height: 1;
+    margin-bottom: $rhythm-half;
+    font-style: italic;
+}
+
+.type-label-stat
+{
+    @extend .type-label;
+    margin: 0;
+
+    font-size: map-get($font-sizes, 'small');
+
+    @media screen and (min-width: $breakpoint-m) {
+        font-size: map-get($font-sizes, 'standard');
+    }
+}
+
+.type-stat {
+    @extend %font-main;
+    color: $color-beta;
+    margin-bottom: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+
+    font-size: map-get($font-sizes, 'large');
+
+    @media screen and (min-width: $breakpoint-m) {
+        font-size: map-get($font-sizes, 'larger');
+    }
+
+}
+
+.type-body-stat
+{
+    font-size: map-get($font-sizes, 'small');
+    margin: 0;
+    padding: 0;
+
+    @media screen and (min-width: $breakpoint-m) {
+        font-size: map-get($font-sizes, 'standard');
+    }
+}
+
+
+.type-label,
+.type-label-light {
+    @extend %font-alt;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.type-label-light {
+    color: $color-mid;
+}
+
+.type-label-small {
+    @extend %font-alt;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: map-get($font-sizes, 'small');
+    color: $color-mid;
+}
+
+.type-label-link {
+    vertical-align: middle;
+    text-decoration: underline;
+}
+
+.type-metadata {
+    font-size: map-get($font-sizes, small);
+    font-style: italic;
+}
+
+.type-eyebrow {
+    display: inline-block;
+    margin-bottom: $rhythm-half;
+}
+
+.type-pullout {
+    font-size: 1.4rem;
+    margin-top: 0;
+    line-height: 1.4;
+
+    & + .type-body,
+    .type-pullout {
+        margin-top: $rhythm-half;
+    }
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.type-body {
+    font-size: map-get($font-sizes, medium);
+    line-height: 1.8;
+    margin: 0;
+
+    & + .type-body {
+        margin-top: 1rem;
+    }
+}
+
+.type-poem {
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 2;
+    white-space: pre-line;
+    font-style: italic;
+    font-size: map-get($font-sizes, medium);
+}
+
+%type-credit {
+    display: block;
+    color: $color-mid;
+    font-size: map-get($font-sizes, 'small');
+
+    & + * {
+        margin-top: $padding-half;
+    }
+}
+
+.type-credit-light {
+    @extend %type-credit;
+    span {
+        color: $color-white;
+    }
+}
+
+.type-credit-dark {
+    @extend %type-credit;
+    span {
+        color: $color-base;
+    }
+}
+
+%type-textlink {
+    cursor: pointer;
+    span,
+    svg {
+        display: inline-block;
+        vertical-align: middle;
+    }
+    * + * {
+        margin-left: $padding-half;
+    }
+}
+
+.type-textlink-alpha {
+    @extend %type-textlink;
+    color: $color-alpha;
+    border-color: $color-alpha;
+    fill: $color-alpha;
+}
+
+.type-textlink-beta {
+    @extend %type-textlink;
+    color: $color-beta;
+    border-color: $color-beta;
+    fill: $color-beta;
+}
+
+.type-textlink-success {
+    @extend %type-textlink;
+    color: $color-success;
+    border-color: $color-success;
+    fill: $color-success;
+}
+
+.type-textlink-error {
+    @extend %type-textlink;
+    color: $color-error;
+    border-color: $color-error;
+    fill: $color-error;
+}
+
+.type-textlink-disabled {
+    @extend %type-textlink;
+    color: $color-mid;
+    border-color: $color-mid;
+    fill: $color-mid;
+    pointer-events: none;
+}
+
+.type-body,
+.type-metadata,
+.type-textlink {
+    letter-spacing: 0.01rem;
+}
+
+.type-linebreak {
+    border-color: rgba($color-alpha, 0.1);
+    margin-bottom: $padding;
+}
+
+
+/*
+ * Modifiers
+ */
+._has-subhead {
+    margin-bottom: $padding-half;
+}
+
+.backlink {
+    svg,
+    span {
+        vertical-align: middle;
+    }
+    svg {
+        margin-right: 0.25em;
+    }
+}
+
+/*
+ * Helpers
+ */
+
+%truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}

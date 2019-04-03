@@ -1,0 +1,104 @@
+%search-input {
+	width:100%;
+
+    &:hover, &:focus {
+        outline:none;
+	}
+	
+	&::-ms-clear { display:none }
+
+    @extend %animateThis;
+}
+
+    .search_inline-input {
+        @extend %search-input;
+        padding:$padding*0.75;
+        background-color:$color-white;
+		border:none;
+		appearance: none;
+
+        &:hover, &:focus {
+            border-color:$color-light;
+        }
+    }
+
+    .search_pill-input {
+        @extend %search-input;
+        padding:$padding-half $padding*0.75;
+        background-color:white;
+        border:1px solid $color-light;
+        border-radius:$padding-double;
+    }
+
+    .search_block-input {
+        @extend %search-input;
+        @extend %corner-radius;
+        padding:$padding $padding $padding $padding*3;
+		border:2px solid $color-white;
+		background-color:$color-white;
+		box-shadow:0 7px 20px 0 rgba(00,00,00,0.05);
+
+        &:focus {
+			border-color:$color-beta;
+            + .search_block-icon {
+                fill:$color-beta;
+            }
+        }
+    }
+
+%search-icon {
+    position:absolute;
+    top:50%;
+    line-height:1;
+    margin-top:-9px;
+
+    @extend %animateThis;
+}
+
+    .search_inline-icon {
+        @extend %search-icon;
+        right:$padding-half;
+        fill:$color-dark;
+
+        svg { width:16px; height:16px; }
+
+    }
+
+     .search_pill-icon {
+         @extend %search-icon;
+         right:$padding*0.75;
+         fill:$color-dark;
+
+         svg { width:16px; height:16px; }
+     }
+
+    .search_block-icon {
+        @extend %search-icon;
+        left:$padding;
+        fill:$color-mid;
+    }
+
+%search-clear {
+    position:absolute;
+    top:50%;
+    line-height:1;
+    margin-top:-8px;
+    cursor:pointer;
+    fill:$color-base;
+
+    &:focus { outline:none }
+}
+
+    .search_inline-clear, .search_pill-clear {
+        @extend %search-clear;
+        right:$padding-half;
+    }
+
+    .search_block-clear {
+        @extend %search-clear;
+        right:$padding;
+	}
+	
+.search-table {
+	margin-bottom:$rhythm-half
+}
